@@ -5,6 +5,8 @@ import { ProductModule } from './product/product.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UploaderModule } from './uploader/uploader.module';
 import { MulterModule } from '@nestjs/platform-express';
+import { AuthModule } from './auth/auth.module';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [ProductModule, TypeOrmModule.forRoot({
@@ -18,7 +20,7 @@ import { MulterModule } from '@nestjs/platform-express';
     synchronize: true,
   }), UploaderModule, MulterModule.register({
     dest: "./uploads"
-  })],
+  }), AuthModule, UserModule],
   controllers: [AppController],
   providers: [AppService],
 })
