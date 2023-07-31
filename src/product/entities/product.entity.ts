@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Product {
@@ -14,4 +14,5 @@ export class Product {
     createdAt:Date;
     @Column({type: "datetime", nullable: true})
     updatedAt:Date;
+    
 }
